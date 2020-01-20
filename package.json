@@ -1,0 +1,16 @@
+{
+  "name": "aqajs",
+  "version": "0.0.1",
+  "private": true,
+  "description": "cypress + js",
+  "author": "OLga Dl",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volhadl/aqajs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^3.8.2"
+  }
+}
