@@ -1,3 +1,1 @@
-module.exports.homepage_date = {
-    homepage               :"https://www.mts.by"
-}
+export const homepage_link = 'https://www.mts.by';

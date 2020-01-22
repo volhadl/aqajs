@@ -1,22 +1,13 @@
-import Homepage from '../../pages/homepage'
-const date = require('../../test_data/data').homepage_date;
+import Rouming from '../../pages/roumingpage'
+import * as data from '../../test_data/data'
 
 describe(" Should navigate to 'Roumig' page", ()=>{
-
-    it("Navigte to Roumingpage", ()=>{
-        
+    
+    // https://app.qase.io/case/CYAQA-47
+    // https://app.qase.io/case/CYAQA-48
+    it("Should verify world-travel tariffs ", ()=>{
         cy.viewport(1920, 1080)
-        cy.visit(date.homepage)
-
-        Homepage.clickOnElement();
-
-        
+        Rouming.navigateByUrl();
+        Rouming.elmentContent();
     })
-    /*it("Navigte to Homepage", ()=>{
-        let width = 1920;
-        let height = 1080;
-        cy.viewport(width, height)
-        cy.visit(date.homepage)
-        cy.get(homepage.shop_tab).should('be.visible').click()
-    })*/
 })
