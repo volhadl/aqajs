@@ -1,4 +1,4 @@
-import Homepage from'../../pages/homepage'
+import Homepage from '../../pages/homepage'
 const date = require('../../test_data/data').homepage_date;
 
 describe(" Should navigate to 'Roumig' page", ()=>{
@@ -8,7 +8,7 @@ describe(" Should navigate to 'Roumig' page", ()=>{
         cy.viewport(1920, 1080)
         cy.visit(date.homepage)
 
-        Homepage.click_on_element();
+        Homepage.clickOnElement();
 
         
     })
