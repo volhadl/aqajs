@@ -1,18 +1,17 @@
-class Rouming {
-    world_wide_url = 'https://www.mts.by/services/roaming/world-travel/'
+class RoumingPage {
 
-    
-    navigateByUrl() {
-        cy.visit(this.world_wide_url)
-        cy.url().should('include', '/roaming/world-travel/')
+    navigateByUrl(url) {
+        cy.viewport(1920, 1080)
+        cy.visit(url)
     }
 
-    elmentContent() {
-        cy.get(':nth-child(1) > *> .item__img > *').contains('1 ГБ за границей')
-        cy.get(':nth-child(2) > *> .item__img > *').contains('Безлимитный интернет в роуминге')
-        cy.get(':nth-child(3) > *> .item__img > *').contains('Открытый интернет в роуминге')
+    elmentContent(array_with_selectors) {
+        for (let i in array_with_selectors)
+        {
+            cy.get(i)
+            cy.get(i)
+            cy.get(i)
+        }
     }
-
-
 }
-export default new Rouming();
+export default new RoumingPage();
