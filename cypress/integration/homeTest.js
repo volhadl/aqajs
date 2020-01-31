@@ -1,16 +1,29 @@
-import RoumingPage from '../../pages/RoamingPage'
-import * as data from '../../test_data/roaming_data'
+import HomePage from '../../src/pages/HomePage'
+import * as homeData from '../../testData/homeData'
+import * as roamingData from '../../testData/roamingData'
 
-describe(" Should navigate to 'Rouming' page", ()=>{
-    
-    // https://app.qase.io/case/CYAQA-47
-    // https://app.qase.io/case/CYAQA-48
-    it("Should verify world-travel tariffs ", ()=>{
-        RoumingPage.navigateByUrl(data.world_wide_url);
-        cy.url().should('include', '/roaming/world-travel/')
-        
-        cy.get(RoumingPage.tariffFirst).should('have.text', data.tariffFirstName)
-        cy.get(RoumingPage.tariffSecond).should('have.text', data.tariffSecondName)
-        cy.get(RoumingPage.tariffThird).should('have.text', data.tariffThirdName)
+describe("HomePage tests", ()=>{
+
+    it('"Roaming" page is available',()=>{
+        HomePage.openUrl(homeData.homeUrl)
+        cy.get(HomePage.roaming).click()
+        cy.url().should('eq', roamingData.roamingUrl)
+    })
+
+    it('"Twitter" page is available',()=>{
+        HomePage.openUrl(homeData.homeUrl)
+        cy.get(HomePage.instagramButton).should('have.attr', 'href', homeData.instagramUrl)
+    })
+
+    it('"twitter" page is available',()=>{
+        HomePage.openUrl(homeData.homeUrl)
+        cy.get(HomePage.twitterButton).should('have.attr', 'href', homeData.twitterUrl)
+    })
+
+    it('"Bestseller" section is available', ()=>{
+        HomePage.openUrl(homeData.homeUrl)
+        cy.get(HomePage.tariffOne).should('have.text', homeData.tariffNameOne)
+        cy.get(HomePage.tariffTwo).should('have.text', homeData.tariffNameTwo)
+        cy.get(HomePage.tariffThree).should('have.text', homeData.tariffNameThree)
     })
 })

@@ -1,16 +1,35 @@
-import RoumingPage from '../../pages/RoamingPage'
-import * as data from '../../test_data/roaming_data'
+import RoamingPage from '../../src/pages/RoamingPage'
+import OpenInternetPage from '../../src/pages/OpenInternetPage'
+import OneGbPage from '../../src/pages/OneGbPage'
+import HomePage from '../../src/pages/HomePage'
+import * as roamingData from '../../testData/roamingData'
+import * as openInternetData from '../../testData/openInternetData'
+import * as oneGbData from '../../testData/oneGbvRoamingeData'
 
-describe(" Should navigate to 'Rouming' page", ()=>{
+describe("Titles verification for roaming tariffs", ()=>{
     
-    // https://app.qase.io/case/CYAQA-47
-    // https://app.qase.io/case/CYAQA-48
-    it("Should verify world-travel tariffs ", ()=>{
-        RoumingPage.navigateByUrl(data.world_wide_url);
-        cy.url().should('include', '/roaming/world-travel/')
-        
-        cy.get(RoumingPage.tariffFirst).should('have.text', data.tariffFirstName)
-        cy.get(RoumingPage.tariffSecond).should('have.text', data.tariffSecondName)
-        cy.get(RoumingPage.tariffThird).should('have.text', data.tariffThirdName)
+    beforeEach(function() {
+        HomePage.openUrl(roamingData.servicesUrl);
+    })
+    
+    it("Verify titles of roaming tariffs", ()=>{        
+        cy.get(RoamingPage.tariffOne).should('have.text', roamingData.tariffNameOne)
+        cy.get(RoamingPage.tariffTwo).should('have.text', roamingData.tariffNameTwo)
+        cy.get(RoamingPage.tariffThree).should('have.text', roamingData.tariffNameThree)
+    })
+    
+    it("'Otkrytyy-internet-v-rouminge' page is available", ()=>{
+        cy.get(RoamingPage.tariffThreeShowButton).click()
+        cy.url().should('eq', openInternetData.urlThreeTariff)
+        cy.get(OpenInternetPage.title).should('have.text', roamingData.tariffNameThree)
+        cy.get(OpenInternetPage.priceFrom).should('contain', openInternetData.priceFrom)
+        cy.get(OpenInternetPage.priceTo).should('contain', openInternetData.priceTo)
+    })
+    
+    it("'1GB-v-rouminge' page is available", ()=>{
+        cy.get(RoamingPage.tariffOneShowButton).click()
+        cy.url().should('eq', oneGbData.urlOneTariff)
+        cy.get(OneGbPage.title).should('have.text', roamingData.tariffNameOne)
+        cy.get(OneGbPage.price).should('contain', oneGbData.price)
     })
 })
