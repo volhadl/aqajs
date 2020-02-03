@@ -7,5 +7,13 @@ class RoumingPage {
         cy.viewport(1920, 1080)
         cy.visit(url)
     }
+
+    checkTariffsName(tariffFirstName, tariffSecondName, tariffThirdName) {
+        cy.get('.row.items > * > .item__img > *').should(($divs) => {
+            expect($divs.eq(0)).to.contain(tariffFirstName)
+            expect($divs.eq(1)).to.contain(tariffSecondName)
+            expect($divs.eq(2)).to.contain(tariffThirdName)
+        })
+    }
 }
 export default new RoumingPage();

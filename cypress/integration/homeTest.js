@@ -1,16 +1,11 @@
-import RoumingPage from '../../pages/RoamingPage'
-import * as data from '../../test_data/roaming_data'
+import HomePage from '../../pages/HomePage'
+import * as data from '../../test_data/home_data'
 
-describe(" Should navigate to 'Rouming' page", ()=>{
+describe("Should find iPhome11", ()=>{
     
-    // https://app.qase.io/case/CYAQA-47
-    // https://app.qase.io/case/CYAQA-48
-    it("Should verify world-travel tariffs ", ()=>{
-        RoumingPage.navigateByUrl(data.roamingUrl);
-        cy.url().should('include', '/roaming/world-travel/')
-        
-        cy.get(RoumingPage.tariffFirst).should('have.text', data.tariffFirstName)
-        cy.get(RoumingPage.tariffSecond).should('have.text', data.tariffSecondName)
-        cy.get(RoumingPage.tariffThird).should('have.text', data.tariffThirdName)
+    it("Should search for iPhone11 and verify title", ()=>{
+       HomePage.navigateByUrl(data.homeUrl)
+       HomePage.typeText(data.text)
+       cy.get(HomePage.title).should('have.text', data.title)
     })
 })
