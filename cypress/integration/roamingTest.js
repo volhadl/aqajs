@@ -1,16 +1,17 @@
-import RoumingPage from '../../pages/RoamingPage'
-import * as data from '../../test_data/roaming_data'
+import RoamingPage from '../../pages/roamingPage'
+import HomePage from '../../pages/homePage'
+import * as roamingData from '../../testData/roamingData'
 
-describe(" Should verify tariffs in 'Rouming' page", ()=>{
+describe("Titles verification for roaming tariffs", ()=>{
     
     // https://app.qase.io/case/CYAQA-47
     // https://app.qase.io/case/CYAQA-48
-    it("Should verify world-travel tariffs ", ()=>{
-        RoumingPage.navigateByUrl(data.roamingUrl);
-        cy.url().should('include', '/roaming/world-travel/')
+    it("Verify titles of roaming tariffs", ()=>{
+        HomePage.openUrl(roamingData.roamingUrl);
+        cy.url().should('eq', roamingData.roamingUrl)
         
-        cy.get(RoumingPage.tariffFirst).should('have.text', data.tariffFirstName)
-        cy.get(RoumingPage.tariffSecond).should('have.text', data.tariffSecondName)
-        cy.get(RoumingPage.tariffThird).should('have.text', data.tariffThirdName)
+        cy.get(RoamingPage.tariffOne).should('have.text', roamingData.tariffNameOne)
+        cy.get(RoamingPage.tariffTwo).should('have.text', roamingData.tariffNameTwo)
+        cy.get(RoamingPage.tariffThree).should('have.text', roamingData.tariffNameThree)
     })
 })

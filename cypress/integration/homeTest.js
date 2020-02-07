@@ -1,11 +1,11 @@
-import HomePage from '../../pages/HomePage'
-import * as data from '../../test_data/home_data'
+import HomePage from '../../pages/homePage'
+import * as homeData from '../../testData/homeData'
 
-describe("Should find iPhome11", ()=>{
+describe("Perform search for iPhone11", ()=>{
     
-    it("Should search for iPhone11 and verify title", ()=>{
-       HomePage.navigateByUrl(data.homeUrl)
-       HomePage.typeText(data.text)
-       cy.get(HomePage.title).should('have.text', data.title)
+    it("Search for iPhone11", ()=>{
+        HomePage.openUrl(homeData.homeUrl)
+        HomePage.performSearch(homeData.iPhone11)
+        cy.get(HomePage.title).should('have.text', homeData.title)
     })
 })
