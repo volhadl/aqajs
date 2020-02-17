@@ -1,5 +1,5 @@
-import RoamingPage from '../../pages/roamingPage'
-import HomePage from '../../pages/homePage'
+import RoamingPage from '../../src/pages/roamingPage'
+import HomePage from '../../src/pages/homePage'
 import * as roamingData from '../../testData/roamingData'
 
 describe("Titles verification for roaming tariffs", ()=>{
