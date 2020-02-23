@@ -1,4 +1,4 @@
-class ShopPage {
+class ShopPhonePage {
     brandDropdown = '#select2-chosen-2'
     appleBrand = '.select2-results > li:nth-child(3)'
     ramSizeFrom = '#arrCatalogFilter_750_MIN'
@@ -20,14 +20,9 @@ class ShopPage {
         return this
     }
     
-<<<<<<< HEAD
     selectMaterial() {
         cy.get(this.metallMaterialCheckbox).click()
         return this
-=======
-    selectMaterial(materialCheckbox) {
-        cy.get(materialCheckbox).click()
->>>>>>> 859f44d030ff4e267ffb7eef36a8353491f5a5fb
     }
 
     fillInRam(ramSizeTo, ramSizeFrom) {
@@ -38,22 +33,14 @@ class ShopPage {
         return this
     }
 
-<<<<<<< HEAD
     selectYear() {
         cy.get(this.year2019Checkbox).click()
         return this
     }
 
     clickShowButton() {
-=======
-    selectYear(yearCheckbox) {
-        cy.get(yearCheckbox).click()
-    }
-
-    clickShow() {
->>>>>>> 859f44d030ff4e267ffb7eef36a8353491f5a5fb
         cy.get(this.showButton).click()
         return this
     }
 }
-export default new ShopPage();
+export default new ShopPhonePage();

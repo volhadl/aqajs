@@ -1,6 +1,6 @@
 import HomePage from '../../src/pages/homePage'
-import ShopPage from '../../src/pages/shopPage'
-import * as shopData from '../../testData/shopData'
+import ShopPage from '../../src/pages/shopPhonePage'
+import * as shopData from '../../testData/shopPhoneData'
 
 describe("Perform search for iPhone11 2019 16GB metall", ()=>{
 

@@ -8,8 +8,6 @@ import * as oneGbData from '../../testData/oneGbvRoamingeData'
 
 describe("Titles verification for roaming tariffs", ()=>{
     
-    // https://app.qase.io/case/CYAQA-47
-    // https://app.qase.io/case/CYAQA-48
     beforeEach(function() {
         HomePage.openUrl(roamingData.roamingUrl);
     })
