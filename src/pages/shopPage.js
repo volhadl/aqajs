@@ -20,8 +20,9 @@ class ShopPage {
         return this
     }
     
-    selectMaterial(materialCheckbox) {
-        cy.get(materialCheckbox).click()
+    selectMaterial() {
+        cy.get(this.metallMaterialCheckbox).click()
+        return this
     }
 
     fillInRam(ramSizeTo, ramSizeFrom) {
@@ -32,11 +33,12 @@ class ShopPage {
         return this
     }
 
-    selectYear(yearCheckbox) {
-        cy.get(yearCheckbox).click()
+    selectYear() {
+        cy.get(this.year2019Checkbox).click()
+        return this
     }
 
-    clickShow() {
+    clickShowButton() {
         cy.get(this.showButton).click()
         return this
     }
