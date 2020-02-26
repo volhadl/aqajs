@@ -1,4 +1,4 @@
-import HomePage from '../../pages/homePage'
+import HomePage from '../../src/pages/homePage'
 import * as homeData from '../../testData/homeData'
 
 describe("Perform search for iPhone11", ()=>{
