@@ -16,11 +16,15 @@ describe("Verification of filters for screen protector", ()=>{
         ScreenPage.sortBy(ScreenPage.sortByPriceAsc)
         cy.get(ScreenPage.sortingSelected).should('contain', screenData.sortByPriceAsc)
         cy.url().should('contain', screenData.sortingByPriceAscUrl)
-        cy.get(":first-child > * >.catalog_tovar_cost").as("first")
-        cy.get(":nth-child(2) > * >.catalog_tovar_cost").as("last")
-        assert.isAbove(10, 9);
+        cy.get(":first-child > * >.catalog_tovar_cost").then(($span) => {
+            const num1 = parseFloat($span.text())
+            cy.get(":nth-child(2) > * >.catalog_tovar_cost").then(($span) => {
+                const num2 = parseFloat($span.text())
+                
+                assert.isAtMost(num1, num2, '${num1} is less than or equal to ${num2}')
 
-        
+            })
+        })
         
         // cy.get(":first-child > * >.catalog_tovar_cost").as('todos')
         //.should('be.gt', 
