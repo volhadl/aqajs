@@ -1,8 +1,9 @@
 class AccessoriesPage {
-    accessoriesType = 'label[for*="4174963110"]'
+    screenProtectionGlass = 'label[for*="4174963110"]'
+    cover = 'label[for*="2675092570"]'
 
-    selectAccessoriesType() {
-        cy.get(this.accessoriesType).click()
+    selectAccessory(accessoryName) {
+        cy.get(accessoryName).click()
         return this
     }
 }

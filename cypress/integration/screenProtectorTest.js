@@ -1,16 +1,20 @@
-import HomePage from '../../src/pages/homePage'
-import ScreenPage from '../../src/pages/screenProtectorPage'
-import ShopPage from '../../src/pages/shopPhonePage'
+import HomePage from '../../src/pages/HomePage'
+import ScreenPage from '../../src/pages/ScreenProtectorPage'
+import ShopPhonePage from '../../src/pages/ShopPhonePage'
+import AccessoriesPage from '../../src/pages/AccessoriesPage'
 import * as screenData from '../../testData/screenProtectorData'
-import * as shopData from '../../testData/shopPhoneData'
-let priceOneValue = 0
-let priceTwoValue = 0
+import * as shopPhoneData from '../../testData/shopPhoneData'
+import * as shopPageData from '../../testData/shopPageData'
 
 
 describe("Verification of filters for screen protector", ()=>{
+    let priceTwoValue = 0
+    let priceThreeValue = 0
 
     beforeEach(function() {
-        HomePage.openUrl(screenData.screenProtectorUrl)  
+        HomePage.openUrl(shopPageData.accessoriesUrl)  
+        AccessoriesPage.selectAccessory(AccessoriesPage.screenProtectionGlass)
+        ShopPhonePage.clickShowButton()
     })
 
     it("Verification of sorting by popularity", ()=>{      
@@ -24,11 +28,11 @@ describe("Verification of filters for screen protector", ()=>{
         ScreenPage.sortBy(ScreenPage.sortByPriceDesc)
         cy.get(ScreenPage.sortingSelected).should('contain', screenData.sortByPriceDesc)
         cy.url().should('contain', screenData.sortingByPriceDescUrl)
-        cy.get(ScreenPage.priceOne).then(($strong) => {
-            priceOneValue = parseFloat($strong.text())
-            cy.get(ScreenPage.priceTwo).then(($strong) => {
-                priceTwoValue = parseFloat($strong.text())
-                assert.isAtLeast(priceOneValue, priceTwoValue)
+        cy.get(ScreenPage.priceTwo).then(($strong) => {
+            priceTwoValue = parseFloat($strong.text())
+            cy.get(ScreenPage.priceThree).then(($strong) => {
+                priceThreeValue = parseFloat($strong.text())
+                assert.isAtLeast(priceTwoValue, priceThreeValue)
             })
         })
     })
@@ -37,39 +41,39 @@ describe("Verification of filters for screen protector", ()=>{
         ScreenPage.sortBy(ScreenPage.sortByPriceAsc)
         cy.get(ScreenPage.sortingSelected).should('contain', screenData.sortByPriceAsc)
         cy.url().should('contain', screenData.sortingByPriceAscUrl)
-        cy.get(ScreenPage.priceOne).then(($strong) => {
-            priceOneValue = parseFloat($strong.text())
-            cy.get(ScreenPage.priceTwo).then(($strong) => {
-                priceTwoValue = parseFloat($strong.text())
-                assert.isAtMost(priceOneValue, priceTwoValue)
+        cy.get(ScreenPage.priceTwo).then(($strong) => {
+            priceTwoValue = parseFloat($strong.text())
+            cy.get(ScreenPage.priceThree).then(($strong) => {
+                priceThreeValue = parseFloat($strong.text())
+                assert.isAtMost(priceTwoValue, priceThreeValue)
             })
         })
     })
 
     it("Verification of sorting by color if 'Белый Перламутр' is selected", ()=>{
         ScreenPage.selectColor(ScreenPage.whitePearlColor)
-        ShopPage.clickShowButton()
-        cy.get(ScreenPage.firstScreen).should('contain', screenData.whitePearl)
+        ShopPhonePage.clickShowButton()
+        cy.get(ScreenPage.firstItem).should('contain', screenData.whitePearl)
     })
 
     it("Verification of sorting by 'Модель вашего устройства' if 'Galaxy A10' is selected", ()=>{
         ScreenPage.selectModel(ScreenPage.galaxyA10Model)
-        ShopPage.clickShowButton()
-        cy.get(ScreenPage.firstScreen).should('contain', screenData.samsungA10Model)
+        ShopPhonePage.clickShowButton()
+        cy.get(ScreenPage.firstItem).should('contain', screenData.samsungA10Model)
     })
 
     it("Verification of sorting by 'Производитель вашего устройства' if 'Apple' is selected", ()=>{
-        ShopPage.selectBrand(ScreenPage.appleBrand)
-        ShopPage.clickShowButton()
-        cy.get(ScreenPage.firstScreen).should('contain', shopData.appleBrand)
+        ShopPhonePage.selectBrand(ScreenPage.appleBrand)
+        ShopPhonePage.clickShowButton()
+        cy.get(ScreenPage.firstItem).should('contain', shopPhoneData.appleBrand)
     })
 
     it("Verification of sorting by 'Цена'", ()=>{
         ScreenPage.fillInPrice(screenData.priceFrom, screenData.priceTo)
-        ShopPage.clickShowButton()
-        cy.get(ScreenPage.priceOne).then(($strong) => {
-            priceOneValue = parseFloat($strong.text())
-            assert.isAtMost(priceOneValue, screenData.priceTo)
+        ShopPhonePage.clickShowButton()
+        cy.get(ScreenPage.priceTwo).then(($strong) => {
+            priceTwoValue = parseFloat($strong.text())
+            assert.isAtMost(priceTwoValue, screenData.priceTo)
         })
     })
 })

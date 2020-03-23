@@ -1,10 +1,10 @@
 class ScreenProtectorPage {
-    firstScreen = ':first-child > *> .catalog_tovar_title'
+    firstItem = ':first-child > *> .catalog_tovar_title'
     sortingSelected = "#select2-chosen-8"
     sortByPopularity = "#select2-result-label-10"
     sortByPriceDesc = "#select2-result-label-12"
     sortByPriceAsc = "#select2-result-label-11"
-    priceOne = ":first-child > * >.catalog_tovar_cost"
+    priceThree = ":nth-child(3) > * >.catalog_tovar_cost"
     priceTwo = ":nth-child(2) > * >.catalog_tovar_cost"
     rateOne = ":first-child > * > * > * >* > * > .vote-active"
     colorDropdown = "#select2-chosen-6"

@@ -20,8 +20,8 @@ class ShopPhonePage {
         return this
     }
     
-    selectMaterial() {
-        cy.get(this.metallMaterialCheckbox).click()
+    selectMaterial(metallMaterialCheckbox) {
+        cy.get(metallMaterialCheckbox).click()
         return this
     }
 
@@ -33,8 +33,8 @@ class ShopPhonePage {
         return this
     }
 
-    selectYear() {
-        cy.get(this.year2019Checkbox).click()
+    selectYear(year) {
+        cy.get(year).click()
         return this
     }
 

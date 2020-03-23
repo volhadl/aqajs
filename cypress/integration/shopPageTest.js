@@ -1,5 +1,7 @@
-import HomePage from '../../src/pages/homePage'
-import ShopPage from '../../src/pages/shopPage'
+import HomePage from '../../src/pages/HomePage'
+import ShopPage from '../../src/pages/ShopPage'
+import AccessoriesPage from '../../src/pages/AccessoriesPage'
+import ShopPhonePage from '../../src/pages/ShopPhonePage'
 import * as shopData from '../../testData/shopPageData'
 
 describe("Verifiy navigation from 'Акссесуары' page", ()=>{
@@ -11,7 +13,10 @@ describe("Verifiy navigation from 'Акссесуары' page", ()=>{
     })
 
     it("Verification of 'Защита' page availability", ()=>{
-        HomePage.openUrl(shopData.protectorssUrl)
+        HomePage.openUrl(shopData.accessoriesUrl)
+        AccessoriesPage.selectAccessory(AccessoriesPage.cover)
+        AccessoriesPage.selectAccessory(AccessoriesPage.screenProtectionGlass)
+        ShopPhonePage.clickShowButton()
         cy.get(ShopPage.coverCheckbox).should('be.checked')
         cy.get(ShopPage.screenProtectorCheckbox).should('be.checked')
     })

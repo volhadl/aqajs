@@ -1,7 +1,7 @@
-import RoamingPage from '../../src/pages/roamingPage'
-import OpenInternetPage from '../../src/pages/openInternetPage'
-import OneGbPage from '../../src/pages/oneGbPage'
-import HomePage from '../../src/pages/homePage'
+import RoamingPage from '../../src/pages/RoamingPage'
+import OpenInternetPage from '../../src/pages/OpenInternetPage'
+import OneGbPage from '../../src/pages/OneGbPage'
+import HomePage from '../../src/pages/HomePage'
 import * as roamingData from '../../testData/roamingData'
 import * as openInternetData from '../../testData/openInternetData'
 import * as oneGbData from '../../testData/oneGbvRoamingeData'
@@ -9,7 +9,7 @@ import * as oneGbData from '../../testData/oneGbvRoamingeData'
 describe("Titles verification for roaming tariffs", ()=>{
     
     beforeEach(function() {
-        HomePage.openUrl(roamingData.roamingUrl);
+        HomePage.openUrl(roamingData.servicesUrl);
     })
     
     it("Verify titles of roaming tariffs", ()=>{        
