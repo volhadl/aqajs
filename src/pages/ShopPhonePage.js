@@ -20,8 +20,8 @@ class ShopPhonePage {
         return this
     }
     
-    selectMaterial(metallMaterialCheckbox) {
-        cy.get(metallMaterialCheckbox).click()
+    selectMaterial(material) {
+        cy.get(material).click()
         return this
     }
 

@@ -11,7 +11,7 @@ describe("Perform search for iPhone11", ()=>{
         cy.get(HomePage.title).should('have.text', homeData.title)
     })
 
-    it("Perform search for iPhone11 2019 16GB metall", ()=>{
+    it("Search for iPhone11 2019 16GB metal", ()=>{
         HomePage.openUrl(shopPhoneData.shopPhonesUrl)
         ShopPhonePage.clickAdvancedSearch()
                 .selectMaterial(ShopPhonePage.metallMaterialCheckbox)

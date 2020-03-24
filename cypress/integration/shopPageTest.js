@@ -6,13 +6,13 @@ import * as shopData from '../../testData/shopPageData'
 
 describe("Verifiy navigation from 'Акссесуары' page", ()=>{
     
-    it("Verification of 'Акссесуары' page availability", ()=>{
+    it("'Акссесуары' page is available", ()=>{
         HomePage.openUrl(shopData.shopUrl)
         cy.get(ShopPage.accessoriesTab).click()
         cy.get(ShopPage.accessoriesPageTitle).should('contain', shopData.accessoriesPageTitle)
     })
 
-    it("Verification of 'Защита' page availability", ()=>{
+    it("'Защита' page is available", ()=>{
         HomePage.openUrl(shopData.accessoriesUrl)
         AccessoriesPage.selectAccessory(AccessoriesPage.cover)
         AccessoriesPage.selectAccessory(AccessoriesPage.screenProtectionGlass)

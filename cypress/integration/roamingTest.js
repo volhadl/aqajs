@@ -18,7 +18,7 @@ describe("Titles verification for roaming tariffs", ()=>{
         cy.get(RoamingPage.tariffThree).should('have.text', roamingData.tariffNameThree)
     })
     
-    it("Verify availability of otkrytyy-internet-v-rouminge page", ()=>{
+    it("'Otkrytyy-internet-v-rouminge' page is available", ()=>{
         cy.get(RoamingPage.tariffThreeShowButton).click()
         cy.url().should('eq', openInternetData.urlThreeTariff)
         cy.get(OpenInternetPage.title).should('have.text', roamingData.tariffNameThree)
@@ -26,7 +26,7 @@ describe("Titles verification for roaming tariffs", ()=>{
         cy.get(OpenInternetPage.priceTo).should('contain', openInternetData.priceTo)
     })
     
-    it("Verify availability of 1GB-v-rouminge page", ()=>{
+    it("'1GB-v-rouminge' page is available", ()=>{
         cy.get(RoamingPage.tariffOneShowButton).click()
         cy.url().should('eq', oneGbData.urlOneTariff)
         cy.get(OneGbPage.title).should('have.text', roamingData.tariffNameOne)
