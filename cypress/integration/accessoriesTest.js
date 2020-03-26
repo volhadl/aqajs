@@ -5,7 +5,7 @@ import ScreenPage from '../../src/pages/ScreenProtectorPage'
 import * as shopData from '../../testData/shopPageData'
 import * as screenData from '../../testData/screenProtectorData'
 
-describe("Verification of redirection from Accessories page", ()=>{
+describe("Redirection from Accessories page", ()=>{
     
     it("Verify redirection to screen protector page", ()=>{      
         HomePage.openUrl(shopData.accessoriesUrl)  
