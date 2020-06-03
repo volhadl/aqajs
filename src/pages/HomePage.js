@@ -9,7 +9,6 @@ class HomePage {
     twitterButton = '[href="https://t.me/by_mts "]'
 
     openUrl(url) {
-        cy.viewport(1920, 1080)
         cy.visit(url)
     }
 
