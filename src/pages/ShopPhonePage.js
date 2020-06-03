@@ -1,4 +1,4 @@
-class ShopPage {
+class ShopPhonePage {
     brandDropdown = '#select2-chosen-2'
     appleBrand = '.select2-results > li:nth-child(3)'
     ramSizeFrom = '#arrCatalogFilter_750_MIN'
@@ -20,8 +20,8 @@ class ShopPage {
         return this
     }
     
-    selectMaterial() {
-        cy.get(this.metallMaterialCheckbox).click()
+    selectMaterial(material) {
+        cy.get(material).click()
         return this
     }
 
@@ -33,8 +33,8 @@ class ShopPage {
         return this
     }
 
-    selectYear() {
-        cy.get(this.year2019Checkbox).click()
+    selectYear(year) {
+        cy.get(year).click()
         return this
     }
 
@@ -43,4 +43,4 @@ class ShopPage {
         return this
     }
 }
-export default new ShopPage();
+export default new ShopPhonePage();

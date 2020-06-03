@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "cypress + js",
-  "author": "OLga Dl",
+  "author": "Volha Dluhakanskaya",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -13,6 +13,10 @@
     "chai": "^4.2.0"
   },
   "devDependencies": {
-    "cypress": "^3.8.2"
+    "cypress": "^4.5.0"
+  },
+    "scripts": {
+      "chrome:headless": "cypress run --headless --browser chrome",
+      "chrome:head": "cypress run --browser chrome"
   }
 }

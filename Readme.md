@@ -6,3 +6,4 @@
 ##### How to run tests loclaly
 Run following command via terminal:
 - `npx cypress open`
+- `npx cypress run --headless --browser chrome`
