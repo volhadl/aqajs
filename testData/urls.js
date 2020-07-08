@@ -1,4 +1,5 @@
 export const homeUrl = 'https://www.mts.by'
+export const a1homeUrl = 'https://www.mts.by/'
 export const instagramUrl = 'http://instagram.com/by_mts'
 export const twitterUrl = 'https://t.me/by_mts '
 export const urlOneTariff = 'https://www.mts.by/services/roaming/1GB-v-rouming/1GB-v-rouminge/'
