@@ -1,25 +1,17 @@
 class ScreenProtectorPage {
-    firstItem = ':first-child > *> .catalog_tovar_title'
-    sortingSelected = "#select2-chosen-8"
-    sortByPopularity = "#select2-result-label-10"
-    sortByPriceDesc = "#select2-result-label-12"
-    sortByPriceAsc = "#select2-result-label-11"
+    firstItem = '.phone-cat-i:first-child > *> a'
+    sortingSelected = "#select2-chosen-8"    
     priceThree = ":nth-child(3) > * >.catalog_tovar_cost"
-    priceTwo = ":nth-child(2) > * >.catalog_tovar_cost"
+    priceTwo = ".phone-cat-i:nth-child(2) > *> * > .pay-box"
     rateOne = ":first-child > * > * > * >* > * > .vote-active"
-    colorDropdown = "#select2-chosen-6"
-    whitePearlColor = "#select2-result-label-13"
-    galaxyA10Model = "#select2-result-label-14"
-    modelDropdown = "#select2-chosen-4"
-    appleBrand = ".select2-results > li:nth-child(2)"
+    colorDropdown = "#select2-chosen-12"
+    whitePearlColor = "#select2-result-label-16"
+    galaxyA10Model = "#select2-result-label-20"
+    modelDropdown = "#select2-chosen-10"
+    brandDropdown = '#s2id_autogen7'
+    appleBrand = "#select2-result-label-14"
     priceFromFiled = '[name*="arrCatalogFilter_207_MIN"]'
     priceToFiled = '[name*="arrCatalogFilter_207_MAX"]'
-
-    sortBy(property) {
-        cy.get(this.sortingSelected).click()
-        cy.get(property).trigger('mousemove').click()
-        return this
-    }
 
     selectColor(color) {
         cy.get(this.colorDropdown).click()
@@ -38,6 +30,12 @@ class ScreenProtectorPage {
         cy.get(this.priceFromFiled).type(priceFrom)
         cy.get(this.priceToFiled).clear() 
         cy.get(this.priceToFiled).type(priceTo)
+        return this
+    }
+
+    selectBrand(brandName) {
+        cy.get(this.brandDropdown).click()
+        cy.get(brandName).trigger('mousemove').click()
         return this
     }
 }

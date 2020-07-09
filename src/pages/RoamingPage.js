@@ -1,8 +1,6 @@
 class RoamingPage {
-    tariffOne = ':nth-child(1) > *> .item__img > *'
-    tariffTwo = ':nth-child(2) > *> .item__img > *'
-    tariffThree = ':nth-child(3) > *> .item__img > *'
-    tariffOneShowButton = '[href*="/1GB-v-rouminge/"]'
-    tariffThreeShowButton = '[href*="/otkrytyy-internet-v-rouminge/"]'
+    tariffOne = '[href*="1GB-v-rouming"] > *>  * > .item__title'
+    tariffTwo = '[href*="bezlimitnyy"] > *>  * > .item__title'
+    tariffThree = '[href*="otkrytyy"] > *>  * > .item__title'
 }
 export default new RoamingPage();

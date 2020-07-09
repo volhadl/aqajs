@@ -1,13 +1,19 @@
 class ShopPhonePage {
-    brandDropdown = '#select2-chosen-2'
-    appleBrand = '.select2-results > li:nth-child(3)'
+    brandDropdown = '#select2-chosen-10'
+    appleBrand = '#select2-result-label-20'
     ramSizeFrom = '#arrCatalogFilter_750_MIN'
     ramSizeTo = '#arrCatalogFilter_750_MAX'
     metallMaterialCheckbox = 'label[for*="1086_1914675509"]'
     year2019Checkbox = 'label[for*="1039_3327493404"]'
     advancedSearch = 'div.js-accordeon > a > span'
-    showButton = '#set_filter'
-    firstPhone = ':nth-child(1) > * > .catalog_tovar_title'
+    showButton = '.btn_send'
+    firstPhone = '.phone-cat-i:first-child > *> a'
+    filterMenu = '.button-filt-lnk'
+
+    openFilterMenu() {
+        cy.get(this.filterMenu).click()
+        return this
+    }
 
     selectBrand(brandName) {
         cy.get(this.brandDropdown).click()

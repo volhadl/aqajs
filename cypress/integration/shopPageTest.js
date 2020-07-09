@@ -15,6 +15,7 @@ describe("Verifiy navigation from 'Акссесуары' page", ()=>{
 
     it("'Защита' page is available", ()=>{
         HomePage.openUrl(urls.accessoriesUrl)
+        ShopPhonePage.openFilterMenu()
         AccessoriesPage.selectAccessory(AccessoriesPage.cover)
         AccessoriesPage.selectAccessory(AccessoriesPage.screenProtectionGlass)
         ShopPhonePage.clickShowButton()

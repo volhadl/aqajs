@@ -9,6 +9,7 @@ describe("Redirection from Accessories page", ()=>{
     
     it("Verify redirection to screen protector page", ()=>{      
         HomePage.openUrl(urls.accessoriesUrl)  
+        ShopPhonePage.openFilterMenu()
         AccessoriesPage.selectAccessory(AccessoriesPage.screenProtectionGlass)
         ShopPhonePage.clickShowButton()
         cy.get(ScreenPage.firstItem).should('contain', screenData.sceenTitle)

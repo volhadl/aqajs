@@ -10,7 +10,7 @@ import * as urls from '../../testData/urls'
 describe("Titles verification for roaming tariffs", ()=>{
     
     beforeEach(function() {
-        HomePage.openUrl(urls.servicesUrl);
+        HomePage.openUrl(urls.internetRoumingUrl);
     })
     
     it("Verify titles of roaming tariffs", ()=>{        
@@ -20,7 +20,7 @@ describe("Titles verification for roaming tariffs", ()=>{
     })
     
     it("'Otkrytyy-internet-v-rouminge' page is available", ()=>{
-        cy.get(RoamingPage.tariffThreeShowButton).click()
+        cy.get(RoamingPage.tariffThree).click()
         cy.url().should('eq', urls.urlThreeTariff)
         cy.get(OpenInternetPage.title).should('have.text', roamingData.tariffNameThree)
         cy.get(OpenInternetPage.priceFrom).should('contain', openInternetData.priceFrom)
@@ -28,7 +28,7 @@ describe("Titles verification for roaming tariffs", ()=>{
     })
     
     it("'1GB-v-rouminge' page is available", ()=>{
-        cy.get(RoamingPage.tariffOneShowButton).click()
+        cy.get(RoamingPage.tariffOne).click()
         cy.url().should('eq', urls.urlOneTariff)
         cy.get(OneGbPage.title).should('have.text', roamingData.tariffNameOne)
         cy.get(OneGbPage.price).should('contain', oneGbData.price)

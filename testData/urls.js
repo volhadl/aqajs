@@ -1,10 +1,10 @@
 export const homeUrl = 'https://www.mts.by'
 export const instagramUrl = 'http://instagram.com/by_mts'
 export const twitterUrl = 'https://t.me/by_mts '
-export const urlOneTariff = 'https://www.mts.by/services/roaming/1GB-v-rouming/1GB-v-rouminge/'
-export const urlThreeTariff = 'https://www.mts.by/services/roaming/otkrytyy-internet/otkrytyy-internet-v-rouminge/'
-export const servicesUrl = 'https://www.mts.by/services/roaming/world-travel/'
+export const urlOneTariff = 'https://www.mts.by/services/roaming/internet-v-rouming/1GB-v-rouminge/'
+export const urlThreeTariff = 'https://www.mts.by/services/roaming/internet-v-rouming/otkrytyy-internet-v-rouminge/'
+export const internetRoumingUrl = 'https://www.mts.by/services/roaming/internet-v-rouming/'
 export const roamingUrl = 'https://www.mts.by/help/rouming/'
-export const shopPhonesUrl = 'https://shop.mts.by/phones/';
+export const shopPhonesUrl = 'https://m.shop.mts.by/phones/';
 export const shopUrl = "https://shop.mts.by/"
-export const accessoriesUrl = "https://shop.mts.by/accessories/"
+export const accessoriesUrl = "https://m.shop.mts.by/accessories/"

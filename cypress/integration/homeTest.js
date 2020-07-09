@@ -24,6 +24,7 @@ describe("HomePage tests", ()=>{
     it('"Bestseller" section is available', ()=>{
         cy.get(HomePage.tariffOne).should('have.text', homeData.tariffNameOne)
         cy.get(HomePage.tariffTwo).should('have.text', homeData.tariffNameTwo)
+        cy.get(HomePage.tariffsSection).trigger('mousemove', 'right')
         cy.get(HomePage.tariffThree).should('have.text', homeData.tariffNameThree)
     })
 })

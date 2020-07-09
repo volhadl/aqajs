@@ -1,9 +1,9 @@
 ##### How to start?:
-- Install nodejs
-- Run `npm install` via terminal
-- Run `npm install cypress --save-dev` via terminal
+Install dependencies:
+`npm install` 
 
 ##### How to run tests loclaly
-Run following command via terminal:
-- `npx cypress open`
-- `npx cypress run --headless --browser chrome`
+Run the following command via the terminal to run tests with reporting:
+- `npm run cypress:test`
+Run the following command to open report:
+- `open cypress/reports/report.html`
