@@ -13,10 +13,16 @@
     "chai": "^4.2.0"
   },
   "devDependencies": {
-    "cypress": "^4.5.0"
+    "cypress": "^4.12.1",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.0.1",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0"
   },
-    "scripts": {
-      "chrome:headless": "cypress run --headless --browser chrome",
-      "chrome:head": "cypress run --browser chrome"
+  "scripts": {
+    "clean:reports": "node deleteReports.js",
+    "cypress:report": "mochawesome-merge cypress/reports/mochawesome-report/*.json > cypress/reports/output.json && marge cypress/reports/output.json -f report -o cypress/reports --charts --autoOpen",
+    "cypress:test": "npm run clean:reports && cypress run --headless --browser chrome || npm run cypress:report"
   }
 }
