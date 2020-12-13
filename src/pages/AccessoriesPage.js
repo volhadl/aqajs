@@ -1,9 +1,9 @@
 class AccessoriesPage {
-    screenProtectionGlass = 'label[for*="4174963110"]'
-    cover = 'label[for*="2675092570"]'
+    cover = '#bx_1847241719_ > *> * > [href="/zashchita"]'
+    screenProtectionGlass = "//*[contains(text(),'Защитное')]"
 
-    selectAccessory(accessoryName) {
-        cy.get(accessoryName).click()
+    selectAccessory(accessory) {
+        cy.get(accessory).click({ force: true })
         return this
     }
 }

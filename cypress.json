@@ -1,13 +1,22 @@
 {
-    "viewportWidth": 940,
-    "viewportHeight": 1200,
-    "reporter": "mochawesome",
-        "reporterOptions": {
-        "charts": false,
-        "html": false,
-        "json": true,
-        "reportDir": "cypress/reports/mochawesome-report/",
-        "reportFilename": "report",
-        "overwrite": false
-    } 
+    "viewportWidth": 1280,
+    "viewportHeight": 1280,
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "mochawesome, mocha-junit-reporter",
+        "mochawesomeReporterOptions": {
+            "charts": false,
+            "html": false,
+            "json": true,
+            "reportDir": "cypress/reports/",
+            "reportFilename": "report",
+            "overwrite": false
+        },
+        "mochaJunitReporterReporterOptions": {
+            "mochaFile": "cypress/reports/results-[hash].xml",
+            "toConsole": false,
+            "useFullSuiteTitle": true,
+            "jenkinsMode": true
+        }
+    }
 }
