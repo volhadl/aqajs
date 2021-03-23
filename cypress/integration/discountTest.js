@@ -11,6 +11,7 @@ describe("Verification of the discount sum", () => {
         HomePage.openUrl(urls.salesUrl)
         cy.getSumArray(selectors, prices)
         cy.then(() => {
+            cy.log(prices[2], prices[1], prices[0])
             expect(prices[2]).to.equal(prices[1] - prices[0])
         })
     })

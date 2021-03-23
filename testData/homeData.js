@@ -1,5 +1,7 @@
-export const iPhone11 = 'iPhone11 2019'
+export const iPhone11 = 'iPhone12'
 export const title = 'Поиск по сайту'
+export const newsOptionOne = 'Новости'
+export const newsOptionTwo = 'Новости ритейла'
 export const tariffNameOne = 'Безлимитище+'
 export const tariffNameTwo = 'Супер 10'
 export const tariffNameThree = 'Супер 25'
