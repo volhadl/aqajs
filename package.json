@@ -26,7 +26,7 @@
   },
   "scripts": {
     "clean:reports": "node deleteReports.js",
-    "cypress:report": "mochawesome-merge cypress/reports/*.json>cypress/reports/output.json && marge cypress/reports/output.json -f ma-report -o cypress/reports --charts --autoOpen",
+    "cypress:report": "mochawesome-merge cypress/reports/*.json>cypress/reports/output.json && marge cypress/reports/output.json --reportDir ./cypress/reports/ --inline",
     "cypress:junit": "jrm cypress/reports/junit-combined-report.xml \"cypress/reports/results-*.xml\"",
     "cypress:test": "npm run clean:reports && cypress run --browser chrome --headless || npm run cypress:report && npm run cypress:junit"
   }

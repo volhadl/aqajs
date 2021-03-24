@@ -19,8 +19,7 @@ pipeline {
                 sh 'npm install'
                 sh 'npm run clean:reports'
                 sh 'npx cypress run --headless --browser chrome || true'
-                sh 'npx mochawesome-merge cypress/reports/*.json -o cypress/reports/output.json'
-                sh 'npx marge cypress/reports/output.json --reportDir ./cypress/reports/ --inline'
+                sh 'npm "cypress:report"'
                 sh 'npm run "cypress:junit"'
             }
         }
@@ -29,7 +28,7 @@ pipeline {
     post {
         always {
             junit 'cypress/reports/junit-combined-report.xml'
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports', reportFiles: 'ma-report.html', reportName: 'Mochawesome Report', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'ma-report.html', reportName: 'ma-report', reportTitles: ''])
         }
     }
 }
