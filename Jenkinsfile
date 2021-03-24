@@ -29,7 +29,7 @@ pipeline {
     post {
         always {
             junit skipPublishingChecks: true, testResults: 'cypress/reports/*.xml'
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports/', reportFiles: 'ma-report.html', reportName: 'Mochawesome Report', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'ma-report.html', reportName: 'Mochawesome Report', reportTitles: ''])
         }
     }
 }
