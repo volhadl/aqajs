@@ -9,7 +9,6 @@ pipeline {
             steps {
                 dir('directoryToDelete') {
                     deleteDir()
-                    cleanWs()
                 }
             }
         }
@@ -29,8 +28,8 @@ pipeline {
 
     post {
         always {
-            junit 'cypress/reports/*.xml'
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports', reportFiles: '*.html', reportName: 'Mochawesome Report', reportTitles: ''])
+            junit 'cypress/reports/junit-combined-report.xml'
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/reports', reportFiles: 'ma-report.html', reportName: 'Mochawesome Report', reportTitles: ''])
         }
     }
 }
