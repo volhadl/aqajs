@@ -28,7 +28,7 @@ pipeline {
 
     post {
         always {
-            junit 'cypress/reports/junit-combined-report.xml'
+            junit '${WORKSPACE}/cypress/reports/junit-combined-report.xml'
         }
     }
 }
