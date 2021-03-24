@@ -21,13 +21,14 @@ pipeline {
                 sh 'npx cypress run --headless --browser chrome'
                 sh 'npx mochawesome-merge cypress/reports/*.json -o cypress/reports/output.json'
                 sh 'npx marge cypress/reports/output.json --reportDir ./cypress/reports/ --inline'
+                sh 'jrm cypress/reports/junit-combined-report.xml \"cypress/reports/results-*.xml\"'
             }
         }
     }
 
     post {
         always {
-            junit 'reports/junit-combined-report.xml'
+            junit 'cypress/reports/junit-combined-report.xml'
         }
     }
 }
