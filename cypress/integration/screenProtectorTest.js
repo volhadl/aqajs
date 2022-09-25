@@ -14,6 +14,13 @@ describe("Verification of filters for screen protector", ()=>{
         ScreenPage.selectType(AccessoriesPage.screenProtectionGlass)
     })
 
+    it("Verify redirect to screen protector page", ()=>{      
+        HomePage.openUrl(urls.accessoriesUrl)  
+        AccessoriesPage.selectAccessory(AccessoriesPage.protection)
+        AccessoriesPage.selectType(AccessoriesPage.screenType)
+        cy.get(ScreenPage.firstItem).should('contain', screenData.sceenTitle)
+    })
+
     it("Verification of sorting by color if 'Черный' is selected", ()=>{  
         ScreenPage.selectColor(ScreenPage.blackColor)
         cy.get(ScreenPage.firstItem).should('contain', screenData.blackFrame)
