@@ -1,9 +1,9 @@
 class AccessoriesPage {
-    cover = '#bx_1847241719_ > * > *> *> * > [href="/accessories/protection"]'
+    protection = '#bx_1847241719_ > * > *> *> * > [href="/accessories/protection"]'
     screenProtectionGlass = "//*[contains(text(),'Защитное')]"
     accessoryType = "//div[contains(text(),'Тип аксессуара')]"
     screenType = "//span[contains(text(),'Защитное стекло')]"
-
+    protectorsTitle = "//span[contains(text(),'Защитные аксессуары')]"
 
     selectAccessory(accessory) {
         cy.get(accessory).click({ force: true })
