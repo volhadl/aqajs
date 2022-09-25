@@ -4,7 +4,7 @@ class ScreenProtectorPage {
     priceThree = ":nth-child(3) > * >.catalog_tovar_cost"
     priceTwo = ".phone-cat-i:nth-child(2) > *> * > .pay-box"
     rateOne = ":first-child > * > * > * >* > * > .vote-active"
-    colorDropdown = "//*[contains(text(),'Цвет')]"
+    colorDropdown = "//div[contains(text(),'Цвет')]"
     blackColor = "//*[text()='Черный']"
     iPhone12ProMaxModel = "//span[contains(text(),'iPhone 12 Pro Max')]"
     modelDropdown = "//*[text()='Модель вашего устройства']"
@@ -15,6 +15,7 @@ class ScreenProtectorPage {
     priceDropdown = "//div[contains(text(),'Цена, руб.')]"
     priceFromFiled = '[id="price-min"]'
     priceToFiled = '[id="price-max"]'
+    allProducts = '.products-list'
 
     selectColor(color) {
         cy.xpath(this.colorDropdown).click()
