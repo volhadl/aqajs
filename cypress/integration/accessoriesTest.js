@@ -4,11 +4,12 @@ import ScreenPage from '../../src/pages/ScreenProtectorPage'
 import * as screenData from '../../testData/screenProtectorData'
 import * as urls from '../../testData/urls'
 
-describe("Redirection from Accessories page", ()=>{
+describe("Navigation on Accessories page", ()=>{
     
-    it("Verify redirection to screen protector page", ()=>{      
+    it("Verify redirect to screen protector page", ()=>{      
         HomePage.openUrl(urls.accessoriesUrl)  
         AccessoriesPage.selectAccessory(AccessoriesPage.cover)
+        AccessoriesPage.selectType(AccessoriesPage.screenType)
         cy.get(ScreenPage.firstItem).should('contain', screenData.sceenTitle)
     })
 })
