@@ -12,7 +12,7 @@ describe("Verifiy navigation from 'Акссесуары' page", ()=>{
         cy.get(ShopPage.accessoriesPageTitle).should('contain', shopData.accessoriesPageTitle)
     })
 
-    it("'Защита' page is available", ()=>{
+    it("'Защита' page is availableeeddddd", ()=>{
         HomePage.openUrl(urls.accessoriesUrl)
         AccessoriesPage.selectAccessory(AccessoriesPage.cover)
         cy.get(ShopPage.coverCheckbox).should('be.checked')
