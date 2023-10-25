@@ -14,7 +14,7 @@
     "junit-report-merger": "^2.0.0"
   },
   "devDependencies": {
-    "cypress": "^9.7.0",
+    "cypress": "^13.3.3",
     "cypress-multi-reporters": "^1.4.0",
     "cypress-xpath": "^1.6.2",
     "mocha": "^10.0.0",
